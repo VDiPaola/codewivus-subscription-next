@@ -3,6 +3,7 @@ import { Stage, Layer, Text, Circle, Group,Line } from 'react-konva';
 import { SkillPool } from './Skills';
 
 import styles from '../../../styles/Skills.module.css'
+import SkillDescription from './SkillDescription';
 
 //types
 type ShapeType = {
@@ -22,11 +23,12 @@ interface LineType {
  }
 
  //component
-const Test = () => {
+const SkillTree = () => {
     //state
     const [lines, setLines] = useState<LineType[]>([]);
     const [circles, setCircles] = useState<CircleType[]>([]);
     const [text, setText] = useState<TextType[]>([]);
+    const [selectedSkill, setSelectedSkill] = useState<Number>(-1);
 
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -39,6 +41,11 @@ const Test = () => {
     const handleClick = (e:any) => {
         const id = e.target.id();
         console.log(id)
+        setSelectedSkill(id);
+    }
+
+    const resetSelectedSkill = ()=>{
+        setSelectedSkill(-1);
     }
 
     const draw = () => {
@@ -130,14 +137,18 @@ const Test = () => {
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
                 onClick={handleClick}
+                onTouchStart={handleClick}
                 />
             ))}
         </Layer>
         
         
         </Stage>
+
+        {selectedSkill >= 0 && <SkillDescription skillId={selectedSkill} close={resetSelectedSkill}/>}
+        
     </div>
   );
 };
 
-export default Test;
+export default SkillTree;

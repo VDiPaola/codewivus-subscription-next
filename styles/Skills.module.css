@@ -2,3 +2,21 @@
   width: 100%;
   overflow: hidden;
 }
+
+.SkillDescription{
+  background-color: rgb(38, 169, 179);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.SkillDescription > p {
+  padding: 5px 10px;
+}
+.SkillDescription button{
+  padding: 5px 20px;
+  background-color: rgb(102, 57, 207);
+  border:none;
+  cursor: pointer;
+  font-weight: bold;
+}
