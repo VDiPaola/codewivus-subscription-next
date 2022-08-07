@@ -1,0 +1,26 @@
+.Header{
+  --bgColor: rgb(19, 18, 124);
+  --textColor: white;
+
+  width: 100%;
+  height: 56px;
+  display: flex;
+  color:var(--textColor);
+  justify-content: space-between;
+}
+
+.NavBar{
+  height: 100%;
+  width: 100%;
+  background-color: var(--bgColor);
+}
+
+.Logo{
+  position: relative;
+  height: 100%;
+}
+.LogoWrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

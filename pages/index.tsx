@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Container.module.css'
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
+import Header from './components/Header/Header';
 
 const Home: NextPage = () => {
   const Map = dynamic(
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
       <Map />
     </div>
   )

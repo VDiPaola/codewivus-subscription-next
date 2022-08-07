@@ -50,8 +50,6 @@ const Test = () => {
         let levelStart = newHeight - radius*2
 
         
-        let prevRow = 0;
-
         let xOffset = 10;
 
         //hold temp data so you can update state once
@@ -61,10 +59,9 @@ const Test = () => {
 
         SkillPool.rows.forEach((row, rowCount) => {
             let maxCircleWidth = row.skills.length * (radius*2 + xOffset)
-            let rowNum = 0;
             row.skills.forEach((skill, skillCount)=>{
                 //centers with x offset
-                let x = (radius + (rowNum * (radius*2)) + xOffset*rowNum) + ((newWidth - maxCircleWidth) / 2);
+                let x = (radius + (skillCount * (radius*2)) + xOffset*skillCount) + ((newWidth - maxCircleWidth) / 2);
                 let y = levelStart - ((radius*3) * rowCount)
                 row.SetPos(skillCount, x, y);
                 //circle
@@ -76,10 +73,6 @@ const Test = () => {
                 }
                 //text
                 tempText.push({x:x-radius,y:y-radius,text:skill.name, width:radius*2})
-
-                //track rows
-                prevRow = skillCount;
-                rowNum++;
             })
             
         })
@@ -116,7 +109,7 @@ const Test = () => {
                 x={circle.x}
                 y={circle.y}
                 radius={circle.radius}
-                fill="#89b717"
+                fill="#76B947"
                 />
             ))}
         </Layer>
