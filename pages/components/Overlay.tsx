@@ -5,11 +5,8 @@ const Overlay = (props: any) => {
 
     const bgClickHandler = (e:any) => {
         if(e.target.id == "overlayContainer"){
-            if(props.close){
-                props.close();
-            }else{
-                setEnabled(false);
-            } 
+            if(props.close) props.close();
+            else setEnabled(false); 
         }
     }
 
