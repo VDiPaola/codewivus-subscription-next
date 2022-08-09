@@ -28,23 +28,10 @@ const Home: NextPage = (props:any) => {
   )
 }
 
-export const getServerSideProps = async () => {
-  // if(CacheManager.has("userData")){
-  //   return {props:{test:CacheManager.get("userData")[0].email}}
-  //   return {props:{test:CacheManager.get("userData")}}
-  // }else{
-  //   return fetch("http://localhost:4000/api/users")
-  //   .then(res => res.json()).then(res => {
-  //     CacheManager.set("userData", res);
-  //     return {props:{test:"something"}}
-  //   })
-  //   .catch(()=>{
-  //     return {props:{test:"nothing"}}
-  //   })
-    
-  // }
+// export const getServerSideProps = async () => {
+
   
-}
+// }
 
 
 export default Home
