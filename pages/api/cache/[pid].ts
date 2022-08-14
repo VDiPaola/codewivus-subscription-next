@@ -12,7 +12,6 @@ export default async function handler(
     var key : CACHE_KEYS = CACHE_KEYS[str as keyof typeof CACHE_KEYS]
     CacheManager.get(key)
     .then(data => {
-      console.log(data)
       res.statusCode = 200
       res.setHeader('Content-Type', 'application/json');
       res.setHeader('Cache-Control', 'max-age=180000');

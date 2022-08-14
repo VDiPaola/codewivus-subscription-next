@@ -23,7 +23,7 @@ interface LineType {
  }
 
  //component
-const SkillTree = () => {
+const SkillTree = (props:any) => {
     //state
     const [lines, setLines] = useState<LineType[]>([]);
     const [circles, setCircles] = useState<CircleType[]>([]);
@@ -150,5 +150,6 @@ const SkillTree = () => {
     </div>
   );
 };
+
 
 export default SkillTree;

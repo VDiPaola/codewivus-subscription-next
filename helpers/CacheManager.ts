@@ -5,7 +5,8 @@ export type CacheType = {
 }
 
 export enum CACHE_KEYS {
-    SKILLS = "SKILLS"
+    SKILLS = "SKILLS",
+    SKILLTREES = "SKILLTREES"
 }
 
 type CacheDataType = {
@@ -13,12 +14,12 @@ type CacheDataType = {
     minutesUntilRefresh: number
 }
 
-
+const BACKEND_URL = "http://localhost:4000";
 export class CacheManager{
     private static _cache = new Map<CACHE_KEYS, CacheType>();
     private static _CACHE_DATA: Record<CACHE_KEYS, CacheDataType> = {
-        [CACHE_KEYS.SKILLS]:{endpoint: "http://localhost:4000/api/skills", minutesUntilRefresh: 60*12}
-    
+        [CACHE_KEYS.SKILLS]:{endpoint: BACKEND_URL+"/api/skills", minutesUntilRefresh: 60*12},
+        [CACHE_KEYS.SKILLTREES]:{endpoint: BACKEND_URL+"/api/skilltrees", minutesUntilRefresh: 60*12},
     };
 
     //gets the data from cache, if enough time passed with refresh the data

@@ -1,0 +1,24 @@
+.container{
+    --bgColor: rgb(61, 66, 66);
+    --buttonTextColor: white;
+    --buttonBgColor: black;
+    --buttonBgColorActive: rgb(0, 255, 13);
+
+    background-color: var(--bgColor);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.treeItem{
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--buttonBgColor);
+    color: var(--buttonTextColor) ;
+    border-radius: 5px;
+}
+
+.active{
+    background-color: var(--buttonBgColorActive);
+}
