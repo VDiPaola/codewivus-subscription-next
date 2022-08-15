@@ -73,10 +73,11 @@ const SkillTree = (props:any) => {
                 row.SetPos(skillCount, x, y);
                 //circle
                 tempCircles.push({x, y, radius, skillIndex:skillCount})
-                //line
+                //line for dependencies
                 for (let dependency of skill.dependencies){
-                    const [depX, depY] = SkillPool.rows[rowCount-1].GetPos(dependency)
-                    tempLines.push({points:[x,y,depX,depY]})
+                    const dependencySkill = SkillPool.rows[rowCount-1]?.GetDependency(dependency)
+                    if (dependencySkill) tempLines.push({points:[x,y,dependencySkill.x,dependencySkill.y]})
+                    
                 }
                 //text
                 tempText.push({x:x-radius,y:y-radius,text:skill.name, width:radius*2})
@@ -90,6 +91,8 @@ const SkillTree = (props:any) => {
     }
 
     useEffect(()=>{
+        //set current skill data then draw
+        SkillPool.RowsBuilder(props.skills)
         draw();
 
         window.addEventListener("resize", draw);

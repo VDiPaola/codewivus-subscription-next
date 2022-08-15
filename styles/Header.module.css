@@ -3,7 +3,7 @@
   --textColor: white;
 
   width: 100%;
-  height: 56px;
+  height: 8%;
   display: flex;
   color:var(--textColor);
   justify-content: space-between;
