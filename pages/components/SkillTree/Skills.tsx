@@ -45,12 +45,12 @@ export class SkillPool{
     static rows: Row[] = [];
 
     static RowsBuilder = (rows: any[])=>{
+        if(!(rows instanceof Array)) return;
         this.rows = [];
         for(let row of rows){
             const curRow = new Row();
             for(let skill of row){
                 curRow.Add(skill.id, skill.title, skill.description, skill.dependencies);
-                console.log(skill.dependencies)
             }
             this.rows.push(curRow);
         }

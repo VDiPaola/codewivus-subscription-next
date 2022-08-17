@@ -11,3 +11,8 @@
   height: 92%;
   display: flex;
 }
+
+.error{
+  text-align: center;
+  color: red;
+}
