@@ -55,4 +55,12 @@ export class SkillPool{
             this.rows.push(curRow);
         }
     }
+
+    static GetById(id:number){
+        for(let row of this.rows){
+            const skill = row.skills.find((x)=> x.id == id)
+            if(skill) return skill;
+        }
+        return null;
+    }
 }

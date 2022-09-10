@@ -28,7 +28,7 @@ const SkillTree = (props:any) => {
     const [lines, setLines] = useState<LineType[]>([]);
     const [circles, setCircles] = useState<CircleType[]>([]);
     const [text, setText] = useState<TextType[]>([]);
-    const [selectedSkill, setSelectedSkill] = useState<Number>(-1);
+    const [selectedSkill, setSelectedSkill] = useState<number>(-1);
 
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -40,7 +40,6 @@ const SkillTree = (props:any) => {
     }
     const handleClick = (e:any) => {
         const id = e.target.id();
-        console.log(id)
         setSelectedSkill(id);
     }
 
@@ -148,7 +147,7 @@ const SkillTree = (props:any) => {
         
         </Stage>
 
-        {selectedSkill >= 0 && <SkillDescription skillId={selectedSkill} close={resetSelectedSkill}/>}
+        {selectedSkill >= 0 && <SkillDescription description={SkillPool.GetById(selectedSkill)?.description} close={resetSelectedSkill}/>}
         
     </div>
   );

@@ -1,12 +1,12 @@
 import styles from '../../../styles/Skills.module.css'
 import Overlay from '../Overlay';
 
-const SkillDescription = ({close}: any) => {
+const SkillDescription = ({close, handleClick, description}: any) => {
     return(
         <Overlay close={close}>
             <div className={styles.SkillDescription}>
-                <p>Intro To JavaScript will cover everything in the latest version of JavaScript including variables, classes and functions.</p>
-                <button>Start</button>
+                <p>{description}</p>
+                <button onClick={handleClick}>Start</button>
             </div>
         </Overlay>
     )
